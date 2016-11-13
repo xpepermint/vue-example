@@ -1,4 +1,4 @@
-# xxx1
+# vue-example
 
 > A Vue.js project
 
@@ -12,7 +12,7 @@ npm install
 npm run build
 
 # switch environment to production
-npm config set xxx1:env production
+npm config set vue-example:env production
 
 # start the server
 npm start

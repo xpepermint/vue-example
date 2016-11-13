@@ -1,3 +1,3 @@
 <template>
-  <div>./src/app/components/home.vue</div>
+  <div>Vue.js Application Example</div>
 </template>
