@@ -17,7 +17,8 @@ exports.public = express.static('public');
 */
 
 exports.render = (req, res) => {
-  let page = req.vue.renderToStream();
+  let ctx = {url: req.originalUrl};
+  let page = req.vue.renderToStream(ctx);
   let publicPath = req.config.publicPath;
 
   res.write(`<!DOCTYPE html>`);
