@@ -11,13 +11,20 @@
 export default {
   computed: {
     users () {
-      // return this.$store.state.users
-      return this.$store.getters.enabledUsers;
+      return this.$store.state.users;
     }
   },
   methods: {
     loadMore () {
       this.$store.dispatch('fetchUsers');
+    }
+  },
+  prefetch () {
+    return this.$store.dispatch('fetchUsers');
+  },
+  beforeMount () {
+    if (!this.$store.state.users.length) {
+      return this.$store.dispatch('fetchUsers');
     }
   }
 }

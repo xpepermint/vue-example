@@ -35,6 +35,7 @@ exports.render = (req, res) => {
     res.write(chunk);
   });
   page.on('end', () => {
+    res.write(  `<script>window.STATE = JSON.parse('${JSON.stringify(ctx.state)}')</script>`);
     res.write(  `<script src="${publicPath}bundle.js"></script>`);
     res.write(`</body>`);
     res.write(`</html>`);
