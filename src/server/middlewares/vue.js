@@ -4,7 +4,7 @@ const express = require('express');
 * Returns the Vue.js production rendering middleware.
 */
 
-exports.vueBundleRenderer = function (config) {
+function vueBundleRenderer () {
   let {bundleRenderer} = require('express-vue-builder');
 
   return bundleRenderer(`${__dirname}/../../../dist/server/bundle.js`);
@@ -14,7 +14,7 @@ exports.vueBundleRenderer = function (config) {
 * Returns the Vue.js development server middleware.
 */
 
-exports.vueDevServer = function (config) {
+function vueDevServer (server) {
   let {build} = require('vue-webpack');
   let {devServer} = require('express-vue-dev');
 
@@ -26,7 +26,7 @@ exports.vueDevServer = function (config) {
     client: build({
       mode: 'client',
       inputFilePath: `${__dirname}/../../app/client-entry.js`,
-      publicPath: config.publicPath
+      publicPath: server.config.publicPath
     })
   });
 }
@@ -35,13 +35,23 @@ exports.vueDevServer = function (config) {
 * Returns the Vue middleware which handles the rendering.
 */
 
-exports.vueHandler = function(config) {
-  let isDev = config.env === 'development';
+function vueServer (server) {
+  let isDev = server.config.env === 'development';
 
   if (isDev) {
-    return exports.vueDevServer(config);
+    return vueDevServer(server);
   }
   else {
-    return exports.vueBundleRenderer(config);
+    return vueBundleRenderer();
   }
+}
+
+/*
+* Module interface.
+*/
+
+module.exports = {
+  vueBundleRenderer,
+  vueDevServer,
+  vueServer
 };

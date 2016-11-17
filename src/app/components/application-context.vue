@@ -23,8 +23,14 @@ export default {
   },
   methods: {
     submit () {
-      return this.user.$save();
+      return this.user.$save(); // a custom instance method defined in schema
     }
+  },
+  beforeCreate () {
+    // Use the `populate()` method (e.g. `this.user.populate({name: 'John'})`)
+    // to populate the user model (`this.user`) when displaying an edit form.
+    // It's a good practice to move this logic to a custom instance or class
+    // method withing your schema file.
   }
 }
 </script>

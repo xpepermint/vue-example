@@ -1,6 +1,6 @@
 # vue-example
 
-> A Vue.js project
+> A Vue.js project (Node.js v7+)
 
 ## Build Setup
 
@@ -24,4 +24,4 @@ nodemon --exec npm start
 
 ## Tutorials
 
-Vue.js tutorials: [Vue.js Cheatsheet](https://xpepermint.gitbooks.io/vue-js-cheatsheet/content/)
+Vue.js tutorials: [Vue.js Cheatsheet](https://xpepermint.gitbooks.io/vue-js-cheatsheet/)

@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Vue.js project",
   "main": "./src/index.js",
   "config": {
@@ -13,7 +13,7 @@
     "build": "npm run build:client; npm run build:server;",
     "build:client": "node ./src/scripts/build-client.js",
     "build:server": "node ./src/scripts/build-server.js",
-    "start": "node ./src/scripts/start"
+    "start": "node --harmony-async-await ./src/scripts/start"
   },
   "author": "Kristijan Sedlak (Xpepermint)",
   "license": "MIT",
@@ -21,12 +21,11 @@
     "contextable": "2.9.0",
     "express": "5.0.0-alpha.2",
     "express-vue-builder": "2.10.1",
-    "isomorphic-fetch": "2.2.1",
-    "vue": "2.0.5",
+    "vue": "2.0.7",
     "vue-builder": "1.5.2",
     "vue-contextable": "1.10.0",
     "vue-router": "2.0.1",
-    "vue-server-renderer": "2.0.5",
+    "vue-server-renderer": "2.0.7",
     "vuex": "2.0.0"
   },
   "devDependencies": {

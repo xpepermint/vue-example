@@ -1,20 +1,23 @@
 const express = require('express');
-const {vueHandler} = require('./middlewares/vue');
-const {router} = require('./router');
+const {vueServer} = require('./middlewares/vue');
+const {
+  appServer,
+  bundlesServer,
+  publicServer
+} = require('./middlewares/app');
 
 /*
 * HTTP server class.
 */
 
-exports.Server = class {
+class Server {
 
   /*
   * Class constructor.
   */
 
-  constructor(config) {
-    this.config = Object.assign(config);
-
+  constructor (config) {
+    this.config = config;
     this.app = null;
     this.server = null;
   }
@@ -23,36 +26,45 @@ exports.Server = class {
   * Returns a promise which starts the server.
   */
 
-  listen() {
-    return new Promise((resolve) => {
-      if (this.server) return this;
+  async listen () {
+    if (this.server) return this;
 
-      this.app = express();
-      this.app.use((req, res, next) => {
-        req.config = this.config;
-        next();
-      });
-      this.app.use(vueHandler(this.config));
-      this.app.use(router(this.config));
+    this.app = express();
+    this.app.use('/', publicServer(this));
+    this.app.use('/', bundlesServer(this));
+    this.app.use('/', vueServer(this));
+    this.app.use('/*', appServer(this));
 
+    await new Promise((resolve) => {
       let {serverPort, serverHost} = this.config;
       this.server = this.app.listen(serverPort, serverHost, resolve);
     });
+
+    return this;
   }
 
   /*
   * Returns a promise which stops the server.
   */
 
-  close() {
-    return new Promise((resolve) => {
-      if (!this.server) return this;
+  async close () {
+    if (!this.server) return this;
 
+    await new Promise((resolve) => {
       this.server.close(resolve);
-
-      this.server = null;
-      this.app = null;
     });
+    this.server = null;
+    this.app = null;
+
+    return this;
   }
 
 }
+
+/*
+* Module interface.
+*/
+
+module.exports = {
+  Server
+};
