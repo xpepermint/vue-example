@@ -1,6 +1,15 @@
 # vue-example
 
-> A Vue.js project (Node.js v7+)
+> A Vue.js project
+
+## Features
+
+> Requires Node.js v7+
+
+* Vue.js client-side and server-side rendering with [vue-builder](https://github.com/xpepermint/vue-builder).
+* Vue.js navigation using the [vue-router](https://github.com/vuejs/vue-router).
+* Application state/store management with [vuex](http://vuex.vuejs.org/en/).
+* Data management, form validation and error handling with [contextable.js](https://github.com/xpepermint/contextablejs).
 
 ## Build Setup
 
