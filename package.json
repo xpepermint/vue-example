@@ -21,11 +21,12 @@
     "contextable": "2.9.0",
     "express": "5.0.0-alpha.2",
     "express-vue-builder": "2.10.1",
-    "vue": "2.0.7",
+    "isomorphic-fetch": "^2.2.1",
+    "vue": "^2.0.8",
     "vue-builder": "1.5.2",
     "vue-contextable": "1.10.0",
     "vue-router": "2.0.1",
-    "vue-server-renderer": "2.0.7",
+    "vue-server-renderer": "^2.0.8",
     "vuex": "2.0.0"
   },
   "devDependencies": {
