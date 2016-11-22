@@ -1,4 +1,3 @@
-import 'isomorphic-fetch';
 import {Schema} from 'contextable';
 
 /*
