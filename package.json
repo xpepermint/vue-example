@@ -21,11 +21,11 @@
     "contextable": "2.9.5",
     "express": "5.0.0-alpha.2",
     "express-vue-builder": "2.12.0",
-    "vue": "2.1.0",
+    "vue": "2.1.1",
     "vue-builder": "1.6.0",
-    "vue-contextable": "1.11.1",
+    "vue-contextable": "1.14.0",
     "vue-router": "2.0.3",
-    "vue-server-renderer": "2.1.0",
+    "vue-server-renderer": "2.1.1",
     "vuex": "2.0.0"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "inline-environment-variables-webpack-plugin": "1.1.0",
     "postcss-cssnext": "2.8.0",
     "vue-loader": "10.0.0",
-    "vue-template-compiler": "2.1.0",
+    "vue-template-compiler": "2.1.1",
     "vue-webpack": "1.10.0",
     "webpack": "2.1.0-beta.27",
     "webpack-hot-middleware": "2.13.2",

@@ -3640,12 +3640,12 @@ vue-builder@1.6.0:
   dependencies:
     memory-fs "^0.3.0"
 
-vue-contextable@1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/vue-contextable/-/vue-contextable-1.11.1.tgz#abd13193122653282a77f26a85c8c43d4622d10a"
+vue-contextable@1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/vue-contextable/-/vue-contextable-1.14.0.tgz#c3a43a477c239c750a95cea1c02848a5c7f44136"
   dependencies:
     promised-debounce "^0.4.0"
-    vue "^2.0.5"
+    vue "^2.1.0"
 
 vue-hot-reload-api@^2.0.1:
   version "2.0.6"
@@ -3672,9 +3672,9 @@ vue-router@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.0.3.tgz#444e246fd42d65a34dea6c3be8fde3315c4ba6f7"
 
-vue-server-renderer@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.1.0.tgz#adae5bfaf63a0a7e29653599eb1baf475817d3df"
+vue-server-renderer@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.1.1.tgz#6a01fbc903f28740de69d294b579e4c6af4b6a14"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3685,9 +3685,9 @@ vue-style-loader@^1.0.0:
   dependencies:
     loader-utils "^0.2.7"
 
-vue-template-compiler@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.0.tgz#b920111b239b2c4234a5ffd78ca42cb664f06559"
+vue-template-compiler@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.1.tgz#d7aba6375c8f4ac4242a7e874d30a10cfdf199bd"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -3700,9 +3700,9 @@ vue-webpack@1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/vue-webpack/-/vue-webpack-1.10.0.tgz#9d82ab1c261ad7757bbce5cde215e602cc524173"
 
-vue@2.1.0, vue@^2.0.5:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.0.tgz#293ba3efaaca846aa6bcbfac45cf8524cc597e3d"
+vue@2.1.1, vue@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.1.tgz#8a1653e19a3ea4d44778893261a9f3c5a70c083b"
 
 vuex@2.0.0:
   version "2.0.0"
