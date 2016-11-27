@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)",
   "main": "./src/index.js",
   "config": {

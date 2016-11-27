@@ -1,10 +1,10 @@
 # vue-example
 
-> A Vue.js project
+> Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)
 
 ## Features
 
-> Requires Node.js v7+
+> This project is based on [vue-clie-template](https://github.com/xpepermint/vue-cli-template) and requires Node.js v7+.
 
 * Vue.js client-side and server-side rendering with [vue-builder](https://github.com/xpepermint/vue-builder).
 * Vue.js navigation using the [vue-router](https://github.com/vuejs/vue-router).
