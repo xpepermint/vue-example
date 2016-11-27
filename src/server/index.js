@@ -1,5 +1,8 @@
 const express = require('express');
-const {vueServer} = require('./middlewares/vue');
+const {
+  vueBundleRenderer,
+  vueDevServer
+} = require('./middlewares/vue');
 const {
   appServer,
   bundlesServer,
@@ -10,14 +13,14 @@ const {
 * HTTP server class.
 */
 
-class Server {
+exports.Server = class {
 
   /*
   * Class constructor.
   */
 
-  constructor (config) {
-    this.config = config;
+  constructor (settings) {
+    this.settings = settings;
     this.app = null;
     this.server = null;
   }
@@ -29,14 +32,21 @@ class Server {
   async listen () {
     if (this.server) return this;
 
+    let isDev = this.settings.env === 'development';
+
     this.app = express();
-    this.app.use('/', publicServer(this));
-    this.app.use('/', bundlesServer(this));
-    this.app.use('/', vueServer(this));
+    this.app.use(publicServer(this));
+    if (isDev) {
+      this.app.use(vueDevServer(this));
+    }
+    else {
+      this.app.use(bundlesServer(this));
+      this.app.use(vueBundleRenderer(this));
+    }
     this.app.use('/*', appServer(this));
 
     await new Promise((resolve) => {
-      let {serverPort, serverHost} = this.config;
+      let {serverPort, serverHost} = this.settings;
       this.server = this.app.listen(serverPort, serverHost, resolve);
     });
 
@@ -60,11 +70,3 @@ class Server {
   }
 
 }
-
-/*
-* Module interface.
-*/
-
-module.exports = {
-  Server
-};

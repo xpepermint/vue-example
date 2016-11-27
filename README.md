@@ -17,18 +17,17 @@
 # install dependencies
 npm install
 
-# build bundles for production
-npm run build
-
-# switch environment to production
-npm config set vue-example:env production
-
-# start the server
+# [development]
+# start application in development (it's a good practice to use `nodemon`
+# in development which will automatically reload the server on code changes
+# e.g. `nodemon --exec npm start`)
 npm start
 
-# use nodemon in development to automatically reload the server on changes
-npm install -g nodemon
-nodemon --exec npm start
+# [production]
+# build production bundles, switch environment to production and run the server
+npm run build
+npm config set vue-example:env production
+npm start
 ```
 
 ## Tutorials

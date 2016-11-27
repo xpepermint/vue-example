@@ -9,3 +9,7 @@
     <router-view class="view"></router-view>
   </div>
 </template>
+
+<style>
+body { color: #c0c0c0; }
+</style>

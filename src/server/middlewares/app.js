@@ -1,30 +1,30 @@
 const express = require('express');
 
 /*
-* Returns a middleware for serving compiled public bundles.
-*/
-
-function bundlesServer () {
-  return express.static('dist/client');
-}
-
-/*
 * Returns a middleware for serving static files.
 */
 
-function publicServer () {
+exports.publicServer = function () {
   return express.static('public');
+}
+
+/*
+* Returns a middleware for serving compiled public bundles.
+*/
+
+exports.bundlesServer = function () {
+  return express.static('dist/client');
 }
 
 /*
 * Returns a middleware which renders the Vue.js application.
 */
 
-function appServer (server) {
+exports.appServer = function ({settings}) {
   return (req, res) => {
     let ctx = {url: req.originalUrl};
     let page = req.vue.renderToStream(ctx);
-    let {publicPath} = server.config;
+    let {publicPath} = settings;
 
     res.write(`<!DOCTYPE html>`);
     page.on('init', () => {
@@ -52,13 +52,3 @@ function appServer (server) {
     });
   };
 }
-
-/*
-* Module interface.
-*/
-
-module.exports = {
-  bundlesServer,
-  publicServer,
-  appServer
-};
