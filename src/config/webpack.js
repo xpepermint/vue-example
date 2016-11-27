@@ -16,9 +16,7 @@ module.exports = (mode, {env, publicPath} = {}) => {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {
-            loaders: {
-              css: ExtractTextPlugin.extract({loader: `css-loader`})
-            }
+            loaders: !isDev ? {css: ExtractTextPlugin.extract({loader: `css-loader`})} : {}
           }
         },
         {

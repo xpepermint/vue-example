@@ -22,6 +22,7 @@ exports.bundlesServer = function () {
 
 exports.appServer = function ({settings}) {
   return (req, res) => {
+    let isDev = settings.env === 'development';
     let ctx = {url: req.originalUrl};
     let page = req.vue.renderToStream(ctx);
     let {publicPath} = settings;
@@ -32,7 +33,7 @@ exports.appServer = function ({settings}) {
       res.write(`<head>`);
       res.write(  `<meta charset="utf-8">`);
       res.write(  `<title>Example</title>`);
-      res.write(  `<link href="${publicPath}bundle.css" rel='stylesheet' type='text/css'>`);
+      res.write(  !isDev ? `<link href="${publicPath}bundle.css" rel='stylesheet' type='text/css'>` : '');
       res.write(`</head>`);
       res.write(`<body>`);
     });
