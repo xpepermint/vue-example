@@ -8,6 +8,7 @@ module.exports = (mode, {env, publicPath} = {}) => {
   let isDev = env === 'development';
 
   return {
+    context: join(__dirname, '..', 'app'),
     target: isClient ? 'web' : 'node',
     devtool: isDev ? '#source-map' : false,
     module: {
@@ -30,6 +31,20 @@ module.exports = (mode, {env, publicPath} = {}) => {
         {
           test: /\.json$/,
           loader: 'json-loader'
+        },
+        {
+          test: /\.(png|jpg|gif|svg)$/,
+          loader: 'file-loader',
+          options: {
+            name: `[path][name].[ext]?[hash]`
+          }
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'file-loader',
+          query: {
+            name: `[path][name].[ext]?[hash]`
+          }
         }
       ]
     },

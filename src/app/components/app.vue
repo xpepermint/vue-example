@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img src="../images/logo.png"/>
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/application-state">Application State With Vuex</router-link></li>
