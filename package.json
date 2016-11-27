@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)",
   "main": "./src/index.js",
   "config": {
@@ -39,7 +39,6 @@
     "inline-environment-variables-webpack-plugin": "^1.1.0",
     "vue-loader": "^10.0.1",
     "vue-template-compiler": "^2.1.3",
-    "webpack": "2.1.0-beta.27",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack": "2.1.0-beta.27"
   }
 }
