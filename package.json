@@ -2,6 +2,9 @@
   "name": "vue-example",
   "version": "1.13.1",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)",
+  "engines": {
+    "node": "7.2.0"
+  },
   "main": "./src/index.js",
   "config": {
     "env": "development",
