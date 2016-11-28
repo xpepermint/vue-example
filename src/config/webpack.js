@@ -23,10 +23,7 @@ module.exports = (mode, {env, publicPath} = {}) => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          exclude: /node_modules/,
-          options: {
-            presets: ['es2015', 'stage-3']
-          }
+          exclude: /node_modules/ /* you must use .babelrc */
         },
         {
           test: /\.json$/,
@@ -65,9 +62,9 @@ module.exports = (mode, {env, publicPath} = {}) => {
         'process.env.VUE_ENV': JSON.stringify(mode)
       }),
       new InlineEnviromentVariablesPlugin(),
-      new ExtractTextPlugin(`bundle.css?[hash]`),
       isDev ? new webpack.HotModuleReplacementPlugin() : null,
       isDev ? new webpack.NoErrorsPlugin() : null,
+      !isDev ? new ExtractTextPlugin(`bundle.css?[hash]`) : null,
       !isDev ? new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}) : null,
       !isDev ? new webpack.LoaderOptionsPlugin({minimize: true}) : null
     ].filter((e) => !!e)

@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.15.1",
+  "version": "1.16.0",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)",
   "engines": {
     "node": "7.2.0"
@@ -33,8 +33,8 @@
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "6.18.0",
-    "babel-preset-stage-3": "^6.17.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2017": "^6.16.0",
     "css-loader": "^0.26.0",
     "express-vue-dev": "^1.12.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
