@@ -1,12 +1,8 @@
 const express = require('express');
 const {
-  vueBundleRenderer,
-  vueDevServer
-} = require('./middlewares/vue');
-const {
-  appServer,
-  bundlesServer,
-  publicServer
+  publicServer,
+  vueServer,
+  appServer
 } = require('./middlewares/app');
 
 /*
@@ -36,14 +32,8 @@ exports.Server = class {
 
     this.app = express();
     this.app.use(publicServer(this));
-    if (isDev) {
-      this.app.use(vueDevServer(this));
-    }
-    else {
-      this.app.use(bundlesServer(this));
-      this.app.use(vueBundleRenderer(this));
-    }
-    this.app.use('/*', appServer(this));
+    this.app.use(vueServer(this));
+    this.app.use(appServer(this));
 
     await new Promise((resolve) => {
       let {serverPort, serverHost} = this.settings;
