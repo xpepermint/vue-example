@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="../images/logo.png"/>
+    <img src="../assets/images/logo.png"/>
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/application-state">Application State With Vuex</router-link></li>
@@ -12,5 +12,5 @@
 </template>
 
 <style>
-body { color: #c0c0c0; }
+@import '../assets/styles/scaffold.css';
 </style>
