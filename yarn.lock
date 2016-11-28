@@ -1354,13 +1354,13 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-express-vue-builder@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/express-vue-builder/-/express-vue-builder-2.14.0.tgz#67b5ebd7466bfe6a7fdec647887eb8537215aa9e"
+express-vue-builder@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/express-vue-builder/-/express-vue-builder-2.15.0.tgz#659e4d829d3806ea9c2f623f6c77c2f60cc35096"
 
-express-vue-dev@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/express-vue-dev/-/express-vue-dev-1.11.0.tgz#1a1709d2365fe7d6e11c2716bfe0d0c7eb57f6b7"
+express-vue-dev@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/express-vue-dev/-/express-vue-dev-1.12.0.tgz#cf2950a45270a34d42b817295eb86732fc8e161d"
   dependencies:
     webpack-dev-middleware "^1.8.4"
     webpack-hot-middleware "^2.13.2"
@@ -1948,8 +1948,8 @@ json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
 json5@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.0.tgz#9b20715b026cbe3778fd769edccd822d8332a5b2"
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
 jsonify@~0.0.0:
   version "0.0.0"
@@ -2043,8 +2043,8 @@ lru-cache@^3.2.0:
     pseudomap "^1.0.1"
 
 lru-cache@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.0.1.tgz#1343955edaf2e37d9b9e7ee7241e27c4b9fb72be"
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.0.2.tgz#1d17679c069cda5d040991a09dbc2c0db377e55e"
   dependencies:
     pseudomap "^1.0.1"
     yallist "^2.0.0"
@@ -3307,9 +3307,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-builder@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/vue-builder/-/vue-builder-1.6.0.tgz#22925593ec5b8a35e77ff19ad2c558a10d00064e"
+vue-builder@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/vue-builder/-/vue-builder-1.7.0.tgz#bcd705aae87ea8b6fe9067e6c077aed744201ae8"
   dependencies:
     memory-fs "^0.3.0"
 
