@@ -2,6 +2,8 @@
 
 > Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)
 
+This application is hosted by [Heroku](https://vue-example.herokuapp.com/).
+
 ## Features
 
 > This project is based on [vue-clie-template](https://github.com/xpepermint/vue-cli-template) and requires Node.js v7+.
