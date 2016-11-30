@@ -9,12 +9,14 @@
   "config": {
     "env": "development",
     "serverHost": "127.0.0.1",
-    "serverPort": 4444,
+    "serverPort": 3000,
     "publicPath": "/"
   },
   "scripts": {
-    "build": "node ./src/scripts/build.js client; node ./src/scripts/build.js server",
-    "start": "node --harmony ./src/scripts/start"
+    "build": "npm run build:client; npm run build:server",
+    "build:client": "node --harmony ./scripts/build.js client",
+    "build:server": "node --harmony ./scripts/build.js server",
+    "start": "node --harmony ./scripts/start"
   },
   "author": "Kristijan Sedlak (Xpepermint)",
   "license": "MIT",
@@ -33,8 +35,7 @@
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
     "css-loader": "^0.26.0",
     "express-vue-dev": "^1.12.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",

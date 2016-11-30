@@ -13,16 +13,14 @@ exports.publicServer = function () {
 * Returns the Vue.js server middleware.
 */
 
-exports.vueServer = function ({settings}) {
-  let isDev = settings.env === 'development';
+exports.vueServer = function ({config}) {
+  let isDev = config.env === 'development';
 
   if (isDev) { // development
     let {devServer} = require('express-vue-dev');
-    let webpack = require('../../config/webpack');
-    let options = Object.assign({}, settings, {env: 'development'});
     return devServer({
-      server: webpack('server', options), // register req.vue
-      client: webpack('client', options) // dynamically serve bundles
+      server: config.webpackServer,
+      client: config.webpackClient
     });
   }
   else { // production
@@ -39,18 +37,19 @@ exports.vueServer = function ({settings}) {
 * Returns a middleware which renders the Vue.js application.
 */
 
-exports.appServer = function ({settings}) {
+exports.appServer = function ({config}) {
   return (req, res) => {
-    let isDev = settings.env === 'development';
+    let {publicPath, env} = config;
+    let isDev = env === 'development';
     let ctx = {url: req.originalUrl};
     let page = req.vue.renderToStream(ctx);
-    let {publicPath} = settings;
 
     res.write(`<!DOCTYPE html>`);
     page.on('init', () => {
       res.write(`<html lang="en">`);
       res.write(`<head>`);
       res.write(  `<meta charset="utf-8">`);
+      res.write(  `<meta name="viewport" content="width=device-width, initial-scale=1">`);
       res.write(  `<title>Example</title>`);
       res.write(  !isDev ? `<link href="${publicPath}bundle.css" rel='stylesheet' type='text/css'>` : '');
       res.write(`</head>`);

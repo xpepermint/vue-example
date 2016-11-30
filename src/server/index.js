@@ -1,22 +1,18 @@
 const express = require('express');
-const {
-  publicServer,
-  vueServer,
-  appServer
-} = require('./middlewares/app');
+const {publicServer, vueServer, appServer} = require('./middlewares/app');
 
 /*
 * HTTP server class.
 */
 
-exports.Server = class {
+exports.Server = class Server {
 
   /*
   * Class constructor.
   */
 
-  constructor (settings) {
-    this.settings = settings;
+  constructor (config) {
+    this.config = config;
     this.app = null;
     this.server = null;
   }
@@ -28,19 +24,15 @@ exports.Server = class {
   async listen () {
     if (this.server) return this;
 
-    let isDev = this.settings.env === 'development';
-
     this.app = express();
     this.app.use(publicServer(this));
     this.app.use(vueServer(this));
     this.app.use(appServer(this));
 
     await new Promise((resolve) => {
-      let {serverPort, serverHost} = this.settings;
+      let {serverPort, serverHost} = this.config;
       this.server = this.app.listen(serverPort, serverHost, resolve);
     });
-
-    return this;
   }
 
   /*
@@ -55,8 +47,6 @@ exports.Server = class {
     });
     this.server = null;
     this.app = null;
-
-    return this;
   }
 
 }

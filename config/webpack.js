@@ -3,12 +3,16 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
-module.exports = (mode, {env, publicPath} = {}) => {
+/*
+* Generates a configuration object for Webpack.
+*/
+
+exports.buildWebpackConfig = function ({mode, env, publicPath}) {
   let isClient = mode === 'client';
   let isDev = env === 'development';
 
   return {
-    context: join(__dirname, '..', 'app'),
+    context: join(__dirname, '..', 'src', 'app'),
     target: isClient ? 'web' : 'node',
     devtool: isDev ? '#source-map' : false,
     module: {
@@ -48,10 +52,10 @@ module.exports = (mode, {env, publicPath} = {}) => {
     entry: [
       isClient ? 'babel-polyfill' : null,
       isClient && isDev ? 'webpack-hot-middleware/client' : null,
-      join(__dirname, '..', 'app', `${mode}-entry.js`)
+      join(__dirname, '..', 'src', 'app', `${mode}-entry.js`)
     ].filter((e) => !!e),
     output: {
-      path: join(__dirname, '..', '..', 'dist', mode),
+      path: join(__dirname, '..', 'dist', mode),
       filename: `bundle.js?[hash]`,
       publicPath,
       libraryTarget: isClient ? 'var' : 'commonjs2'
