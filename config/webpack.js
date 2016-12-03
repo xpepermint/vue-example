@@ -7,7 +7,7 @@ const InlineEnviromentVariablesPlugin = require('inline-environment-variables-we
 * Generates a configuration object for Webpack.
 */
 
-exports.buildWebpackConfig = function ({mode, env, publicPath}) {
+module.exports = function ({mode, env, publicPath}) {
   let isClient = mode === 'client';
   let isDev = env === 'development';
 

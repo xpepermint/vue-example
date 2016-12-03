@@ -19,8 +19,8 @@ exports.vueServer = function ({config}) {
   if (isDev) { // development
     let {devServer} = require('express-vue-dev');
     return devServer({
-      server: config.webpackServer,
-      client: config.webpackClient
+      server: config.webpackServer(),
+      client: config.webpackClient()
     });
   }
   else { // production
