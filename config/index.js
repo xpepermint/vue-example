@@ -6,12 +6,12 @@ module.exports = {
 
   webpackServer () {
     return require('./webpack')(
-      Object.assign({mode: 'server'}, this)
+      Object.assign({mode: 'server'}, module.exports)
     );
   },
   webpackClient () {
     return require('./webpack')(
-      Object.assign({mode: 'client'}, this)
+      Object.assign({mode: 'client'}, module.exports)
     );
   }
 };
