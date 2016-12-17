@@ -39,10 +39,11 @@ exports.vueServer = function ({config}) {
 
 exports.appServer = function ({config}) {
   return (req, res) => {
-    let {publicPath, env} = config;
+    let {publicPath, env, locale} = config;
     let isDev = env === 'development';
     let ctx = {url: req.originalUrl};
     let page = req.vue.renderToStream(ctx);
+    let lang = locale.substr(0,2);
 
     res.write(`<!DOCTYPE html>`);
     page.on('init', () => {
@@ -59,6 +60,7 @@ exports.appServer = function ({config}) {
       res.write(chunk);
     });
     page.on('end', () => {
+      res.write(`  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.${lang}"></script>`);
       res.write(  `<script>window.STATE = JSON.parse('${JSON.stringify(ctx.state)}')</script>`);
       res.write(  `<script src="${publicPath}bundle.js"></script>`);
       res.write(`</body>`);

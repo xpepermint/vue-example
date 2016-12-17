@@ -3,9 +3,11 @@ import App from './components/app.vue';
 import router from './router';
 import store from './store';
 import context from './context';
+import i18n from './i18n';
 
 export const app = new Vue(
   Vue.util.extend({
+    i18n,
     router,
     store,
     context

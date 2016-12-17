@@ -1,5 +1,5 @@
 <template>
-  <div>Vue.js Application Example</div>
+  <div>{{ $formatMessage('home.text') }}</div>
 </template>
 
 <style>

@@ -1,6 +1,6 @@
 # vue-example
 
-> Vue.js example application (server-side rendering, router, vuex store, forms validation with contextable.js)
+> Vue.js example application (server-side rendering, router, vuex store, form validation, i18n & l10n)
 
 This application is hosted by [Heroku](https://vue-example.herokuapp.com/).
 
@@ -8,10 +8,11 @@ This application is hosted by [Heroku](https://vue-example.herokuapp.com/).
 
 > This project is based on [vue-clie-template](https://github.com/xpepermint/vue-cli-template) and requires Node.js v7+.
 
-* Vue.js client-side and server-side rendering with [vue-builder](https://github.com/xpepermint/vue-builder).
-* Vue.js navigation using the [vue-router](https://github.com/vuejs/vue-router).
+* Client-side and server-side rendering with [vue-builder](https://github.com/xpepermint/vue-builder).
+* Navigation using the [vue-router](https://github.com/vuejs/vue-router).
 * Application state/store management with [vuex](http://vuex.vuejs.org/en/).
 * Data management, form validation and error handling with [contextable.js](https://github.com/xpepermint/contextablejs).
+* Internationalization (i18n) & Localization (l10n) using [vue-translated](https://github.com/xpepermint/vue-translated)
 
 ## Build Setup
 
