@@ -9,7 +9,7 @@
 * Client-side and server-side rendering with [vue-builder](https://github.com/xpepermint/vue-builder).
 * Navigation using the [vue-router](https://github.com/vuejs/vue-router).
 * Application state/store management with [vuex](http://vuex.vuejs.org/en/).
-* Data management, form validation and error handling with [contextable.js](https://github.com/xpepermint/contextablejs).
+* Data management, form validation and error handling with [vue-contextable](https://github.com/xpepermint/vue-contextable).
 * Internationalization (i18n) & Localization (l10n) using [vue-translated](https://github.com/xpepermint/vue-translated)
 
 ## Build Setup

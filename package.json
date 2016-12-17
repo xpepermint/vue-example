@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.20.1",
+  "version": "1.20.2",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation, i18n & l10n)",
   "engines": {
     "node": "7.2.0"
