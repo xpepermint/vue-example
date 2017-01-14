@@ -67,7 +67,7 @@ module.exports = function ({mode, env, publicPath}) {
       }),
       new InlineEnviromentVariablesPlugin(),
       isDev ? new webpack.HotModuleReplacementPlugin() : null,
-      isDev ? new webpack.NoErrorsPlugin() : null,
+      isDev ? new webpack.NoEmitOnErrorsPlugin() : null,
       !isDev ? new ExtractTextPlugin(`bundle.css?[hash]`) : null,
       !isDev ? new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}) : null,
       !isDev ? new webpack.LoaderOptionsPlugin({minimize: true}) : null

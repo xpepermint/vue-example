@@ -1,6 +1,6 @@
 {
   "name": "vue-example",
-  "version": "1.20.2",
+  "version": "1.21.0",
   "description": "Vue.js example application (server-side rendering, router, vuex store, forms validation, i18n & l10n)",
   "engines": {
     "node": "7.2.0"
@@ -22,31 +22,31 @@
   "author": "Kristijan Sedlak (Xpepermint)",
   "license": "MIT",
   "dependencies": {
-    "contextable": "^3.0.0",
-    "express": "5.0.0-alpha.2",
-    "express-vue-builder": "^2.15.0",
-    "icu4c-data": "0.58.2",
+    "express": "^5.0.0-alpha.2",
+    "express-vue-builder": "^2.15.1",
+    "icu4c-data": "^0.58.2",
+    "rawmodel": "^1.5.0",
     "translated": "^0.3.0",
-    "vue": "^2.1.3",
-    "vue-builder": "^1.7.0",
-    "vue-contextable": "^2.1.0",
-    "vue-router": "^2.0.3",
-    "vue-server-renderer": "^2.1.3",
+    "vue": "^2.1.8",
+    "vue-builder": "^1.7.2",
+    "vue-rawmodel": "^1.0.0",
+    "vue-router": "^2.1.1",
+    "vue-server-renderer": "^2.1.8",
     "vue-translated": "^0.3.0",
-    "vuex": "^2.0.0"
+    "vuex": "^2.1.1"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.8",
-    "babel-polyfill": "^6.16.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-latest": "^6.16.0",
-    "css-loader": "^0.26.0",
-    "express-vue-dev": "^1.12.0",
-    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "css-loader": "^0.26.1",
+    "express-vue-dev": "^1.12.2",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "inline-environment-variables-webpack-plugin": "^1.1.0",
-    "vue-loader": "^10.0.1",
-    "vue-template-compiler": "^2.1.3",
-    "webpack": "2.1.0-beta.27"
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.1.8",
+    "webpack": "^2.2.0-rc.4"
   }
 }

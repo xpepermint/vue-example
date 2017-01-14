@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './components/app.vue';
 import router from './router';
 import store from './store';
-import context from './context';
+import * as models from './models';
 import i18n from './i18n';
 
 export const app = new Vue(
@@ -10,6 +10,6 @@ export const app = new Vue(
     i18n,
     router,
     store,
-    context
+    models
   }, App)
 );
